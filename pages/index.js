@@ -2,13 +2,13 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Canvas } from "@react-three/fiber";
 import Box from "../components/threeObject/box";
-import CameraPositionController from "../components/cameraPositionController";
+import BoxPositionController from "../components/boxPositionController";
 import { useState } from "react";
 
 export default function Home() {
-  const [cameraX, setCameraX] = useState(0);
-  const [cameraY, setCameraY] = useState(0);
-  const [cameraZ, setCameraZ] = useState(0);
+  const [boxX, setBoxX] = useState(0);
+  const [boxY, setBoxY] = useState(0);
+  const [boxZ, setBoxZ] = useState(0);
 
   return (
     <div className={styles.container}>
@@ -25,19 +25,19 @@ export default function Home() {
         </h1>
         <div>
           <Canvas camera={{ fov: 75, near: 0.1, far: 20, }}>
-            <Box position={[cameraX, cameraY, cameraZ]} />
+            <Box position={[boxX, boxY, boxZ]} />
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={-0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
           </Canvas>
         </div>
-        <CameraPositionController
-          cameraX={cameraX}
-          cameraY={cameraY}
-          cameraZ={cameraZ}
-          setCameraX={(cameraX)=>setCameraX(cameraX)}
-          setCameraY={(cameraY)=>setCameraY(cameraY)}
-          setCameraZ={(cameraZ)=>setCameraZ(cameraZ)}
+        <BoxPositionController
+          boxX={boxX}
+          boxY={boxY}
+          boxZ={boxZ}
+          setBoxX={(boxX)=>setBoxX(boxX)}
+          setBoxY={(boxY)=>setBoxY(boxY)}
+          setBoxZ={(boxZ)=>setBoxZ(boxZ)}
         />
       </main>
     </div>

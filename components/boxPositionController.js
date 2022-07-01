@@ -1,31 +1,31 @@
 import Button from "@mui/material/Button";
 
-export default function CameraPositionController(props) {
+export default function BoxPositionController(props) {
   //   propsの取り出し
-  var cameraX = props.cameraX;
-  var cameraY = props.cameraY;
-  var cameraZ = props.cameraZ;
-  var setCameraX = (cameraX) => props.setCameraX(cameraX);
-  var setCameraY = (cameraY) => props.setCameraY(cameraY);
-  var setCameraZ = (cameraZ) => props.setCameraZ(cameraZ);
+  var boxX = props.boxX;
+  var boxY = props.boxY;
+  var boxZ = props.boxZ;
+  var setBoxX = (boxX) => props.setBoxX(boxX);
+  var setBoxY = (boxY) => props.setBoxY(boxY);
+  var setBoxZ = (boxZ) => props.setBoxZ(boxZ);
 
 //   onclickイKベント用関数
-  var xIncrease = () => setCameraX(cameraX + 1)
-  var xDecrease = () => setCameraX(cameraX - 1)
-  var yIncrease = () => setCameraY(cameraY + 1)
-  var yDecrease = () => setCameraY(cameraY - 1)
-  var zIncrease = () => setCameraZ(cameraZ + 1)
-  var zDecrease = () => setCameraZ(cameraZ - 1)
+var xIncrease = () => setBoxX(boxX + 1)
+var xDecrease = () => setBoxX(boxX - 1)
+var yIncrease = () => setBoxY(boxY + 1)
+var yDecrease = () => setBoxY(boxY - 1)
+var zIncrease = () => setBoxZ(boxZ + 1)
+var zDecrease = () => setBoxZ(boxZ - 1)
 
   return (
     <div>
-      <p className="controller">カメラ操作</p>
+      <p className="controller">BOX配置操作</p>
       <div>
         X :　
         <Button variant="contained" size="small" onClick={() => xDecrease()}>
           ←
         </Button>
-        　{cameraX}　
+        　{boxX}　
         <Button variant="contained" size="small" onClick={() => xIncrease()}>
           →
         </Button>
@@ -35,7 +35,7 @@ export default function CameraPositionController(props) {
         <Button variant="contained" size="small" onClick={() => yDecrease()}>
           ←
         </Button>
-        　{cameraY}　
+        　{boxY}　
         <Button variant="contained" size="small" onClick={() => yIncrease()}>
           →
         </Button>
@@ -45,7 +45,7 @@ export default function CameraPositionController(props) {
         <Button variant="contained" size="small" onClick={() => zDecrease()}>
           ←
         </Button>
-        　{cameraZ}　
+        　{boxZ}　
         <Button variant="contained" size="small" onClick={() => zIncrease()}>
           →
         </Button>
